@@ -1,5 +1,28 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <div>About</div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      items: [
+        {
+          icon: 'mdi-alert',
+          title: 'About'
+        },
+        {
+          icon: 'mdi-alert',
+          title: 'About'
+        },
+        {
+          icon: 'mdi-alert',
+          title: 'About'
+        }
+      ]
+    }
+  },
+  methods: {
+
+  }
+}
+</script>
