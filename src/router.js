@@ -38,6 +38,10 @@ export default new Router({
       component: () => import('./views/lectures/layout.vue')
     },
     {
+      path: '/lectures/notes',
+      component: () => import('./views/lectures/notes.vue')
+    },
+    {
       path: '*',
       component: () => import('./views/e404.vue')
     }

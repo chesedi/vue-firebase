@@ -1,24 +1,44 @@
-# vuefity
+# vf
 
-## Project setup
-```
-npm install
-```
+Vue & Firebase lecture
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# setup
 
-### Compiles and minifies for production
-```
-npm run build
+## dependecies install
+
+```bash
+$ yarn
 ```
 
-### Lints and fixes files
-```
-npm run lint
+## firebase init
+
+```bash
+$ sudo npm i firebase-tools -g
+$ firebase login
+$ firebase init hosting
+# select your project
+? Select a default Firebase project for this directory: your-project
+? What do you want to use as your public directory? dist
+? Configure as a single-page app (rewrite all urls to /index.html)? No
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## firebase deploy
+
+```bash
+$ yarn firebase:deploy
+```
+
+## firebase config file
+
+**./firebaseConfig.js**
+```javascript
+export default {
+  apiKey: '...',
+  authDomain: 'x.firebaseapp.com',
+  databaseURL: 'https://x.firebaseio.com',
+  projectId: 'x',
+  storageBucket: '',
+  messagingSenderId: '111',
+  appId: '12'
+}
+```

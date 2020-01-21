@@ -20,9 +20,7 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# firebbase
+# firebase
 .firebase
-
-# yarn
-yarn.lock
-
+.firebaserc
+firebaseConfig.js
