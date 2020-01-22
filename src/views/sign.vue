@@ -24,6 +24,10 @@
         <v-icon>mdi-email</v-icon>
         메일로그인
       </v-btn>
+        <v-btn color="primary" @click="signOut">
+        <v-icon>mdi-logout</v-icon>
+        로그아웃
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -45,6 +49,10 @@ export default {
     },
     async signInEmail () {
       const r = await this.$firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+      console.log(r)
+    },
+    async signOut () {
+      const r = await this.$firebase.auth().signOut()
       console.log(r)
     }
   }
