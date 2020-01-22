@@ -84,12 +84,9 @@ export default {
     }
   },
   methods: {
-    create () {
-      this.$axios.post('http://localhost:5000/test-vf-1-8094a/us-central1/test')
-        .then(r => {
-          this.textCreate = r.data
-        })
-        .catch(e => console.error(e.message))
+    async create () {
+      const r = await this.$axios.post('http://localhost:5000/test-vf-1-8094a/us-central1/test')
+      this.textCreate = r.data
     },
     read () {
       this.$axios.get('http://localhost:5000/test-vf-1-8094a/us-central1/test/1234')
