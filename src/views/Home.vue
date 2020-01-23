@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-alert type="primary" :value="true" v-for="i in array" :key="i">
-      adcd {{i}}
-    </v-alert>
+    여기는 메인페이지
   </div>
 </template>
 
