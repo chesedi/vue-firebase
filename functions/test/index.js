@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-  res.send('get ok ' + +req.params.id)
+  res.send('get ok ' + req.params.id)
 })
 
 app.put('/:id', (req, res) => {
@@ -23,7 +23,7 @@ app.put('/:id', (req, res) => {
 })
 
 app.delete('/:id', (req, res) => {
-  res.send('delete ok  ' + req.params.id)
+  res.send('delete ok ' + req.params.id)
 })
 
 app.use(require('../middlewares/error'))
