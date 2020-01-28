@@ -98,7 +98,6 @@ export default {
       const provider = new this.$firebase.auth.GoogleAuthProvider()
       this.$firebase.auth().languageCode = 'ko'
       await this.$firebase.auth().signInWithPopup(provider)
-      await this.$firebase.auth().currentUser.getIdToken(true)
     },
     async createWithEmailAndPassword () {
       if (!this.$refs.form.validate()) return this.$toasted.global.error('입력 폼을 올바르게 작성해주세요.')
@@ -107,8 +106,6 @@ export default {
       const result = await user.updateProfile({
         displayName: `${this.form.lastName} ${this.form.firstName}`
       })
-      await this.$firebase.auth().currentUser.getIdToken(true)
-      console.log(result)
     }
   }
 }
