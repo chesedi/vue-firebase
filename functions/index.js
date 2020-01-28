@@ -30,3 +30,23 @@ exports.createUser = functions.auth.user().onCreate(async (user) => {
 exports.deleteUser = functions.auth.user().onDelete((user) => {
   return db.collection('users').doc(user.uid).delete()
 })
+exports.incrementUserCount = functions.firestore
+  .document('users/{userId}')
+  .onCreate((snap, context) => {
+    return db.collection('infos').doc('users').update(
+      'counter', admin.firestore.FieldValue.increment(1)
+    )
+  })
+
+exports.decrementUserCount = functions.firestore
+  .document('users/{userID}')
+  .onDelete((snap, context) => {
+    return db.collection('infos').doc('users').update(
+      'counter', admin.firestore.FieldValue.increment(-1)
+    )
+  })
+
+db.collection('infos').doc('users').get()
+  .then(s => {
+    if (!s.exists) db.collection('infos').doc('users').set({ counter: 0 })
+  })
