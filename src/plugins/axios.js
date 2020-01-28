@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import store from '../store'
 
 const firebaseApi = axios.create({
   baseURL: 'http://localhost:5000/test-vf-1-8094a/us-central1/',
@@ -9,7 +10,7 @@ const firebaseApi = axios.create({
 
 firebaseApi.interceptors.request.use(function (config) {
   // Do something before request is sent
-  config.headers.authorization = Math.random()
+  config.headers.authorization = store.state.token
   return config
 }, function (error) {
   // Do something with request error
