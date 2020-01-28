@@ -4,11 +4,9 @@ const admin = require('firebase-admin')
 // // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
 
-admin.initializeApp()
+admin.initializeApp({ credential: admin.credential.cert('./key.json') })
 
 const db = admin.firestore()
-
-console.log(functions.config().admin)
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
   response.send('Hello from Firebase!')

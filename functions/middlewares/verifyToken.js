@@ -3,6 +3,8 @@ const admin = require('firebase-admin')
 module.exports = (req, res, next) => {
   console.log(JSON.stringify(req.headers))
   console.log('here')
+  console.log(req.headers.authorization)
+
   admin.auth().verifyIdToken(req.headers.authorization)
     .then(function (decodedToken) {
       req.claims = decodedToken
