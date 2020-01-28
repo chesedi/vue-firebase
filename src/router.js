@@ -6,7 +6,7 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 const levelCheck = (to, from, next) => {
-  if (store.state.claims.level === undefined) next('/userProfile')
+  if (store.state.claims === undefined) next('/userProfile')
   next()
 }
 
@@ -76,10 +76,29 @@ const router = new Router({
   ]
 })
 
+const waitFirebase = () => {
+  return new Promise((resolve, reject) => {
+    let cnt = 0
+    const tmr = setInterval(() => {
+      if (store.state.firebaseLoaded) {
+        clearInterval(tmr)
+        resolve()
+      } else if (cnt++ > 200) {
+        clearInterval(tmr)
+        reject(Error('파이어베이스 로드가 안되었습니다.'))
+      }
+    }, 10)
+  })
+}
+
 router.beforeEach((to, from, next) => {
-  Vue.prototype.$Progress.start()
-  if (store.state.firebaseLoaded) next()
+  // Vue.prototype.$Progress.start()
+  // if (store.state.firebaseLoaded) next()
+  waitFirebase()
+    .then(() => next())
+    .catch(e => Vue.prototype.$toasted.global.error(e.message))
 })
+
 router.afterEach((to, from) => {
   Vue.prototype.$Progress.finish()
 })
