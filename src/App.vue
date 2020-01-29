@@ -188,6 +188,17 @@ export default {
           ]
         },
         {
+          icon: 'mdi-account',
+          title: 'Admin',
+          active: false,
+          subItems: [
+            {
+              title: '회원관리',
+              to: '/admin/users'
+            }
+          ]
+        },
+        {
           icon: 'mdi-alert-box',
           title: 'test',
           active: false,
