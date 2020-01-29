@@ -5,6 +5,21 @@ Vue.use(Toasted, {
   iconPack: 'mdi'
 })
 
+Vue.toasted.register('notice', (payload) => {
+  return payload
+}, {
+  icon: 'mdi-bell',
+  position: 'bottom-right',
+  duration: 8000,
+  classname: 'subheading',
+  action: {
+    text: '닫기',
+    onClick: (e, toastObject) => {
+      toastObject.goAway(0)
+    }
+  }
+})
+
 Vue.toasted.register('error', (payload) => {
   return payload
 }, {

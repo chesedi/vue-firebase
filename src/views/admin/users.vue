@@ -47,7 +47,7 @@
                 md4
                 lg3
               >
-              <user-card :item="item"></user-card>
+              <user-card :item="item" @del="list"></user-card>
               </v-flex>
             </v-layout>
           </template>
