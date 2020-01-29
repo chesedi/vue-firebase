@@ -31,7 +31,10 @@ export default new Vuex.Store({
   actions: {
     async getUser ({ dispatch, commit }, user) {
       commit('setUser', user)
-      if (!user) return false
+      if (!user) {
+        commit('setFirebaseLoaded')
+        return null
+      }
       await dispatch('getToken', user)
       commit('setFirebaseLoaded')
       return true

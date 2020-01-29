@@ -136,6 +136,10 @@ const router = new Router({
       component: () => import('./views/lectures/grid')
     },
     {
+      path: '/lectures/rdb',
+      component: () => import('./views/lectures/rdb')
+    },
+    {
       path: '*',
       component: () => import('./views/e404.vue')
     }

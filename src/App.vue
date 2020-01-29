@@ -184,17 +184,10 @@ export default {
             {
               title: 'layout',
               to: '/lectures/layout'
-            }
-          ]
-        },
-        {
-          icon: 'mdi-account',
-          title: 'Admin',
-          active: false,
-          subItems: [
+            },
             {
-              title: '회원관리',
-              to: '/admin/users'
+              title: 'rdb',
+              to: '/lectures/rdb'
             }
           ]
         },
@@ -214,6 +207,17 @@ export default {
             {
               title: 'lv2',
               to: '/test/lv2'
+            }
+          ]
+        },
+        {
+          icon: 'mdi-account',
+          title: 'Admin',
+          active: false,
+          subItems: [
+            {
+              title: '회원관리',
+              to: '/admin/users'
             }
           ]
         }
