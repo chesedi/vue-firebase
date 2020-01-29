@@ -121,11 +121,15 @@ const router = new Router({
     },
     {
       path: '/lectures/mother',
-      component: () => import('./views/lectures/mother.vue')
+      component: () => import('./views/lectures/mother')
     },
     {
       path: '/lectures/vuex',
-      component: () => import('./views/lectures/vuex.vue')
+      component: () => import('./views/lectures/vuex')
+    },
+    {
+      path: '/lectures/storage',
+      component: () => import('./views/lectures/storage')
     },
     {
       path: '*',
