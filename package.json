@@ -9,7 +9,7 @@
     "firebase:deploy": "vue-cli-service build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "core-js": "^2.6.5",
     "firebase": "^7.7.0",
